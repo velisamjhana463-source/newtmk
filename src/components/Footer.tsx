@@ -41,7 +41,7 @@ export default function Footer({ onShowPrivacy }: FooterProps) {
               <img
                 src="/logo-transparent.png"
                 alt="СТРОЙСЕРВИС"
-                className="h-9 md:h-10 w-auto object-contain brightness-0 invert"
+                className="h-10 md:h-12 w-auto object-contain brightness-0 invert"
               />
             </a>
             <p className="text-sm text-slate-400 leading-relaxed font-medium">

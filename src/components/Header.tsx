@@ -82,7 +82,7 @@ export default function Header() {
             <img
               src="/logo-transparent.png"
               alt="СТРОЙСЕРВИС"
-              className={`h-9 md:h-10 w-auto object-contain transition-all duration-300 ${
+              className={`h-10 md:h-12 w-auto object-contain transition-all duration-300 ${
                 scrolled ? "" : "brightness-0 invert"
               }`}
             />
@@ -161,7 +161,7 @@ export default function Header() {
             <img
               src="/logo-transparent.png"
               alt="СТРОЙСЕРВИС"
-              className="h-9 w-auto object-contain"
+              className="h-10 w-auto object-contain"
             />
           </a>
           <button
