@@ -36,91 +36,13 @@ export default function Footer({ onShowPrivacy }: FooterProps) {
             <a
               href="#"
               onClick={(e) => handleScrollTo(e, "#")}
-              className="flex items-center space-x-3 group"
+              className="flex items-center group animate-fade-in"
             >
-              {/* Logo Icon SVG */}
-              <svg
-                viewBox="0 0 100 100"
-                className="w-10 h-10 group-hover:scale-105 transition-transform duration-300 shrink-0"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <defs>
-                  <linearGradient id="logo-steel-foot" x1="0%" y1="0%" x2="100%" y2="100%">
-                    <stop offset="0%" stopColor="#94a3b8" />
-                    <stop offset="50%" stopColor="#475569" />
-                    <stop offset="100%" stopColor="#1e293b" />
-                  </linearGradient>
-                  <linearGradient id="logo-blue-foot" x1="0%" y1="0%" x2="100%" y2="100%">
-                    <stop offset="0%" stopColor="#3b82f6" />
-                    <stop offset="100%" stopColor="#1d4ed8" />
-                  </linearGradient>
-                  <linearGradient id="logo-light-blue-foot" x1="0%" y1="0%" x2="100%" y2="0%">
-                    <stop offset="0%" stopColor="#60a5fa" />
-                    <stop offset="100%" stopColor="#3b82f6" />
-                  </linearGradient>
-                </defs>
-
-                {/* 3D Bottom Blue Plate */}
-                <path
-                  d="M 20,48 L 20,58 L 50,75 L 85,55 L 85,45 L 75,40 L 75,48 L 50,62 L 32,52 L 32,42 Z"
-                  fill="url(#logo-blue-foot)"
-                />
-                <path
-                  d="M 20,58 L 20,62 L 50,79 L 85,59 L 85,55 L 50,75 Z"
-                  fill="#1e3a8a"
-                />
-
-                {/* Top Steel Plate */}
-                <path
-                  d="M 20,38 L 50,20 L 85,40 L 75,45 L 50,29 L 32,38 Z"
-                  fill="url(#logo-steel-foot)"
-                />
-                <path
-                  d="M 20,38 L 32,38 L 32,48 L 20,48 Z"
-                  fill="#475569"
-                />
-
-                {/* Truss lattices */}
-                <line x1="40" y1="28" x2="40" y2="42" stroke="#64748b" strokeWidth="2.5" />
-                <line x1="50" y1="23" x2="50" y2="38" stroke="#64748b" strokeWidth="2.5" />
-                <line x1="60" y1="27" x2="60" y2="42" stroke="#64748b" strokeWidth="2.5" />
-                <line x1="70" y1="32" x2="70" y2="45" stroke="#64748b" strokeWidth="2.5" />
-
-                <line x1="32" y1="38" x2="40" y2="42" stroke="#475569" strokeWidth="1.5" />
-                <line x1="40" y1="28" x2="50" y2="38" stroke="#475569" strokeWidth="1.5" />
-                <line x1="50" y1="23" x2="60" y2="42" stroke="#475569" strokeWidth="1.5" />
-                <line x1="60" y1="27" x2="70" y2="45" stroke="#475569" strokeWidth="1.5" />
-
-                {/* Bottom blue truss members */}
-                <line x1="40" y1="56" x2="40" y2="70" stroke="#2563eb" strokeWidth="2.5" />
-                <line x1="50" y1="60" x2="50" y2="74" stroke="#2563eb" strokeWidth="2.5" />
-                <line x1="60" y1="56" x2="60" y2="70" stroke="#2563eb" strokeWidth="2.5" />
-
-                <line x1="32" y1="52" x2="40" y2="70" stroke="#1d4ed8" strokeWidth="1.5" />
-                <line x1="40" y1="56" x2="50" y2="74" stroke="#1d4ed8" strokeWidth="1.5" />
-                <line x1="50" y1="60" x2="60" y2="70" stroke="#1d4ed8" strokeWidth="1.5" />
-
-                {/* Framing lines */}
-                <path d="M 32,38 L 50,28 L 75,43" stroke="#1e293b" strokeWidth="2" strokeLinecap="round" />
-                <path d="M 32,48 L 50,38 L 75,53" stroke="#1d4ed8" strokeWidth="2" strokeLinecap="round" />
-
-                {/* Edge glow highlights */}
-                <path d="M 20,38 L 50,20 L 85,40" stroke="url(#logo-light-blue-foot)" strokeWidth="1.5" strokeLinecap="round" />
-              </svg>
-
-              {/* Vertical Separator Line */}
-              <div className="h-8 w-px bg-slate-800" />
-
-              {/* Text logo */}
-              <div className="flex flex-col text-left">
-                <span className="text-lg font-black text-white tracking-tight leading-none">
-                  СТРОЙСЕРВИС
-                </span>
-                <span className="text-[9px] text-slate-500 font-bold uppercase tracking-wider mt-1">
-                  Металлоконструкции
-                </span>
-              </div>
+              <img
+                src="/logo-transparent.png"
+                alt="СТРОЙСЕРВИС"
+                className="h-9 md:h-10 w-auto object-contain brightness-0 invert"
+              />
             </a>
             <p className="text-sm text-slate-400 leading-relaxed font-medium">
               Изготовление, проектирование и монтаж навесов из поликарбоната, профнастила и металлочерепицы, козырьков, ворот, лестниц и ограждений в Уфе и Республике Башкортостан.
