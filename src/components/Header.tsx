@@ -67,7 +67,7 @@ export default function Header() {
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
           ? "bg-white/95 backdrop-blur-md shadow-md py-3 border-b border-slate-100"
-          : "bg-white md:bg-slate-50/80 backdrop-blur-md py-4 md:py-5 border-b border-slate-100 md:border-b-0"
+          : "bg-transparent py-4 md:py-5"
       }`}
     >
       <div className="container mx-auto px-4 max-w-7xl">
@@ -83,10 +83,14 @@ export default function Header() {
               <Hammer className="w-6 h-6" />
             </div>
             <div className="flex flex-col">
-              <span className="text-xl font-black text-slate-800 tracking-tight leading-none">
+              <span className={`text-xl font-black tracking-tight leading-none transition-colors duration-300 ${
+                scrolled ? "text-slate-800" : "text-white"
+              }`}>
                 СТРОЙСЕРВИС
               </span>
-              <span className="text-[10px] text-slate-500 font-bold uppercase tracking-wider mt-0.5">
+              <span className={`text-[10px] font-bold uppercase tracking-wider mt-0.5 transition-colors duration-300 ${
+                scrolled ? "text-slate-500" : "text-slate-400"
+              }`}>
                 Навесы и металлоконструкции
               </span>
             </div>
@@ -96,9 +100,13 @@ export default function Header() {
           <div className="hidden md:flex items-center space-x-6 shrink-0">
             <a
               href={CONTACTS_DATA.phoneValue}
-              className="flex items-center space-x-2 text-slate-800 hover:text-blue-600 font-bold transition-colors duration-200 whitespace-nowrap"
+              className={`flex items-center space-x-2 font-bold transition-colors duration-300 whitespace-nowrap ${
+                scrolled ? "text-slate-800 hover:text-blue-600" : "text-white hover:text-blue-400"
+              }`}
             >
-              <div className="p-2 bg-slate-100 rounded-lg text-slate-600">
+              <div className={`p-2 rounded-lg transition-colors duration-300 ${
+                scrolled ? "bg-slate-100 text-slate-600" : "bg-white/10 text-white"
+              }`}>
                 <Phone className="w-4 h-4" />
               </div>
               <span className="text-sm tracking-tight">{CONTACTS_DATA.phoneDisplay}</span>
@@ -114,7 +122,11 @@ export default function Header() {
           {/* Mobile Hamburguer */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="p-2 lg:hidden rounded-xl bg-slate-100 text-slate-700 hover:bg-slate-200 transition-colors"
+            className={`p-2 lg:hidden rounded-xl transition-all duration-300 ${
+              scrolled
+                ? "bg-slate-100 text-slate-700 hover:bg-slate-200"
+                : "bg-white/10 text-white hover:bg-white/20"
+            }`}
             aria-label="Открыть меню"
           >
             {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -122,13 +134,17 @@ export default function Header() {
         </div>
 
         {/* Bottom Row: Desktop Navigation */}
-        <nav className="hidden lg:flex items-center justify-center space-x-8 mt-4 pt-3 border-t border-slate-100 w-full">
+        <nav className={`hidden lg:flex items-center justify-center space-x-8 mt-4 pt-3 border-t transition-colors duration-300 w-full ${
+          scrolled ? "border-slate-100" : "border-white/10"
+        }`}>
           {navLinks.map((link) => (
             <a
               key={link.name}
               href={link.href}
               onClick={(e) => handleLinkClick(e, link.href)}
-              className="text-sm font-bold text-slate-600 hover:text-blue-600 transition-colors duration-200 whitespace-nowrap"
+              className={`text-sm font-bold transition-colors duration-200 whitespace-nowrap hover:text-blue-500 ${
+                scrolled ? "text-slate-600" : "text-slate-300 hover:text-white"
+              }`}
             >
               {link.name}
             </a>
